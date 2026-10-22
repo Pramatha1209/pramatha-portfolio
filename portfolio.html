@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pramatha H D — Data • Analytics • AI Developer</title>
+  <meta name="description" content="Personal portfolio of Pramatha H D — Electronics & Communication Engineering graduate specializing in data analytics, machine learning, and intelligent software development." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+  <!-- Global Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Pramatha H D Home">
+        <span class="brand-monogram">PRAMATHA H D</span>
+        <span class="brand-badge">AVAILABLE FOR 2026 ROLES</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="public/Pramatha_Resume.pdf" class="btn btn-nav" target="_blank" rel="noopener noreferrer" download="Pramatha_H_D_Resume.pdf">
+          <span>Resume</span>
+          <svg class="icon-inline" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-content">
+      <a href="#hero" class="drawer-link">Home</a>
+      <a href="#about" class="drawer-link">About</a>
+      <a href="#skills" class="drawer-link">Skills</a>
+      <a href="#experience" class="drawer-link">Experience</a>
+      <a href="#projects" class="drawer-link">Projects</a>
+      <a href="#education" class="drawer-link">Education</a>
+      <a href="#contact" class="drawer-link">Contact</a>
+      <div class="drawer-footer">
+        <a href="public/Pramatha_Resume.pdf" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer" download>
+          Download Resume (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION WITH SCROLL ANIMATION -->
+    <section id="hero" class="hero-track" aria-label="Hero Introduction">
+      <div class="hero-sticky-frame">
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-scrim" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <div class="hero-kicker">
+            <span class="kicker-pulse"></span>
+            <span class="kicker-text">DATA • ANALYTICS • AI</span>
+          </div>
+
+          <h1 class="hero-title">PRAMATHA H D</h1>
+
+          <p class="hero-intro">
+            Engineering graduate and technology enthusiast focused on data analytics, artificial intelligence, software development, and building intelligent digital applications.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-copper">
+              <span>Explore My Work</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline-light">
+              <span>Contact Me</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="hero-footer-bar">
+            <div class="hero-frame-counter">
+              <span class="counter-label">SEQUENCE</span>
+              <span class="counter-number" id="hero-frame-val">001 / 240</span>
+            </div>
+            <div class="hero-scroll-prompt">
+              <span class="prompt-text">Scroll to explore sequence</span>
+              <div class="mouse-cue">
+                <div class="mouse-wheel"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT WRAPPER WITH WARM IVORY EDITORIAL BACKGROUND -->
+    <div class="content-body">
+      <!-- ABOUT ME SECTION -->
+      <section id="about" class="section about-section" aria-label="About Me">
+        <div class="section-container">
+          <div class="section-label-wrap">
+            <span class="section-num">01</span>
+            <span class="section-kicker">ABOUT ME</span>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-visual-column">
+              <div class="portrait-card">
+                <div class="portrait-frame">
+                  <img src="public/pramatha-portrait.jpg" alt="Pramatha H D — Engineering Graduate & Developer" class="portrait-img" loading="lazy" />
+                  <div class="portrait-tag">
+                    <span class="portrait-name">Pramatha H D</span>
+                    <span class="portrait-role">B.E. Electronics &amp; Communication (2026)</span>
+                  </div>
+                </div>
+                <div class="portrait-backdrop"></div>
+              </div>
+
+              <div class="meta-card">
+                <div class="meta-row">
+                  <span class="meta-label">Location</span>
+                  <span class="meta-val">Bengaluru, Karnataka, India</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">Institution</span>
+                  <span class="meta-val">Nitte Meenakshi Institute of Technology</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">Status</span>
+                  <span class="meta-val highlight-green">Available for Full-Time Roles (2026)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-text-column">
+              <h2 class="section-title">Bridging analytical rigor, machine intelligence, and software engineering.</h2>
+
+              <p class="lead-text">
+                I am an Electronics and Communication Engineering graduate from Nitte Meenakshi Institute of Technology (NMIT), Bangalore (Class of 2026), deeply drawn to data analytics, machine learning, AI applications, and product development.
+              </p>
+
+              <p class="body-text">
+                My work centers on converting raw data and mathematical concepts into reliable software. Whether cleaning multi-source datasets, developing predictive regression models, designing executive business intelligence dashboards, or architecting client-facing web and mobile applications, I approach engineering with curiosity, disciplined analysis, and attention to detail.
+              </p>
+
+              <div class="approach-header">
+                <h3 class="subsection-title">My Engineering Approach</h3>
+              </div>
+
+              <div class="approach-grid">
+                <div class="approach-card">
+                  <div class="approach-num">01</div>
+                  <h4 class="approach-title">Practical Problem Solving</h4>
+                  <p class="approach-desc">Building measurable solutions tailored to real-world friction and operational needs rather than purely theoretical models.</p>
+                </div>
+
+                <div class="approach-card">
+                  <div class="approach-num">02</div>
+                  <h4 class="approach-title">Analytical &amp; Software Fusion</h4>
+                  <p class="approach-desc">Combining rigorous statistical data analysis with modern software engineering and clean code practices.</p>
+                </div>
+
+                <div class="approach-card">
+                  <div class="approach-num">03</div>
+                  <h4 class="approach-title">Learning by Building</h4>
+                  <p class="approach-desc">An active builder mentality—deepening technical understanding through hands-on experimentation, debugging, and continuous prototyping.</p>
+                </div>
+
+                <div class="approach-card">
+                  <div class="approach-num">04</div>
+                  <h4 class="approach-title">Ideas to Usable Products</h4>
+                  <p class="approach-desc">Taking concepts from raw datasets and notebook exploratory analyses to deployed, intuitive digital products that serve real users.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNICAL SKILLS SECTION -->
+      <section id="skills" class="section skills-section" aria-label="Technical Skills">
+        <div class="section-container">
+          <div class="section-label-wrap">
+            <span class="section-num">02</span>
+            <span class="section-kicker">TECHNICAL SKILLS</span>
+          </div>
+
+          <div class="section-intro-block">
+            <h2 class="section-title">Specialized competencies across data science, machine learning, and application architecture.</h2>
+            <p class="section-subtitle">Verified tools, frameworks, and programming environments applied across academic projects and practical internship work.</p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Group 1 -->
+            <div class="skill-group-card">
+              <div class="skill-group-header">
+                <span class="skill-cat-num">01</span>
+                <h3 class="skill-group-title">Programming &amp; Data</h3>
+              </div>
+              <p class="skill-group-desc">Core languages and libraries for data manipulation, cleaning, and statistical analysis.</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Matplotlib</span>
+                <span class="skill-tag">Seaborn</span>
+              </div>
+            </div>
+
+            <!-- Group 2 -->
+            <div class="skill-group-card">
+              <div class="skill-group-header">
+                <span class="skill-cat-num">02</span>
+                <h3 class="skill-group-title">Machine Learning &amp; AI</h3>
+              </div>
+              <p class="skill-group-desc">Algorithms, predictive modeling workflows, evaluation metrics, and intelligent application design.</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">TensorFlow / Keras</span>
+                <span class="skill-tag">ML Workflows &amp; Pipelines</span>
+                <span class="skill-tag">Predictive Modelling</span>
+                <span class="skill-tag">Recommendation Systems</span>
+                <span class="skill-tag">AI Application Development</span>
+              </div>
+            </div>
+
+            <!-- Group 3 -->
+            <div class="skill-group-card">
+              <div class="skill-group-header">
+                <span class="skill-cat-num">03</span>
+                <h3 class="skill-group-title">Data Visualization &amp; BI</h3>
+              </div>
+              <p class="skill-group-desc">Interactive executive reporting, KPI monitoring, and business data storytelling.</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Dashboard Development</span>
+                <span class="skill-tag">Exploratory Data Analysis</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">DAX &amp; Data Modeling</span>
+              </div>
+            </div>
+
+            <!-- Group 4 -->
+            <div class="skill-group-card">
+              <div class="skill-group-header">
+                <span class="skill-cat-num">04</span>
+                <h3 class="skill-group-title">Web &amp; Application Development</h3>
+              </div>
+              <p class="skill-group-desc">Full-stack web frameworks and cross-platform mobile development.</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">Python-based Web Apps</span>
+                <span class="skill-tag">Flutter &amp; Dart</span>
+                <span class="skill-tag">Application Development</span>
+                <span class="skill-tag">REST APIs</span>
+              </div>
+            </div>
+
+            <!-- Group 5 -->
+            <div class="skill-group-card">
+              <div class="skill-group-header">
+                <span class="skill-cat-num">05</span>
+                <h3 class="skill-group-title">Tools &amp; Environment</h3>
+              </div>
+              <p class="skill-group-desc">Development environments, version control, and collaborative workflows.</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Jupyter Notebook</span>
+                <span class="skill-tag">Google Colab</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE AND RECENT ACTIVITY SECTION -->
+      <section id="experience" class="section experience-section" aria-label="Experience and Recent Activity">
+        <div class="section-container">
+          <div class="section-label-wrap">
+            <span class="section-num">03</span>
+            <span class="section-kicker">EXPERIENCE &amp; TRAJECTORY</span>
+          </div>
+
+          <div class="section-intro-block">
+            <h2 class="section-title">Verified experience, practical training, and active initiatives.</h2>
+            <p class="section-subtitle">A curated record of hands-on industry work and continuous project engineering.</p>
+          </div>
+
+          <div class="experience-layout">
+            <!-- Timeline Item -->
+            <div class="timeline-column">
+              <div class="timeline-card">
+                <div class="timeline-meta">
+                  <span class="timeline-period">2024 • Remote</span>
+                  <span class="timeline-badge">VERIFIED INTERNSHIP</span>
+                </div>
+                <h3 class="timeline-role">Data Science Intern</h3>
+                <h4 class="timeline-company">Place Mantra</h4>
+                <ul class="timeline-bullets">
+                  <li>Performed comprehensive exploratory data analysis using Python and SQL to identify key business trends and optimize recommendation algorithms by 25%.</li>
+                  <li>Engineered robust ETL workflows for cleaning, restructuring, and preparing multi-source operational datasets for analysis.</li>
+                  <li>Created and published interactive Power BI dashboards for operational KPI tracking and executive decision support.</li>
+                  <li>Collaborated effectively in a remote environment, documenting data methodologies, findings, and actionable takeaways for project stakeholders.</li>
+                </ul>
+                <div class="timeline-tech">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">SQL</span>
+                  <span class="tech-pill">Power BI</span>
+                  <span class="tech-pill">ETL</span>
+                  <span class="tech-pill">EDA</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Currently Building Area -->
+            <div class="building-column">
+              <div class="building-card">
+                <div class="building-header">
+                  <div class="pulse-indicator">
+                    <span class="pulse-dot"></span>
+                    <span class="pulse-ring"></span>
+                  </div>
+                  <span class="building-kicker">CURRENTLY BUILDING</span>
+                </div>
+
+                <h3 class="building-title">Active Projects &amp; Experiments</h3>
+                <p class="building-subtitle">Current work in progress, personal experiments, and upcoming intelligent systems.</p>
+
+                <div class="building-list">
+                  <div class="building-item">
+                    <div class="item-header">
+                      <span class="item-index">01</span>
+                      <h4 class="item-name">AI-Powered Personal Assistant</h4>
+                    </div>
+                    <p class="item-desc">An Android application incorporating speech recognition, spoken command parsing, app launching, and real-time battery and system time telemetry.</p>
+                    <span class="item-tag">Android • Speech APIs • Automation</span>
+                  </div>
+
+                  <div class="building-item">
+                    <div class="item-header">
+                      <span class="item-index">02</span>
+                      <h4 class="item-name">Smart Spend AI Expense Tracking Application</h4>
+                    </div>
+                    <p class="item-desc">A cross-platform financial tracking system with dedicated house construction milestone management, photo/video receipt records, and analytical expense breakdown.</p>
+                    <span class="item-tag">Flutter • SQLite • Analytics</span>
+                  </div>
+
+                  <div class="building-item">
+                    <div class="item-header">
+                      <span class="item-index">03</span>
+                      <h4 class="item-name">Intelligent Automation &amp; Agentic AI Experiments</h4>
+                    </div>
+                    <p class="item-desc">Prototyping multi-step autonomous agent workflows, tool calling, and automated data processing pipelines.</p>
+                    <span class="item-tag">Agentic AI • Python • Automation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECTS SECTION -->
+      <section id="projects" class="section projects-section" aria-label="Featured Projects">
+        <div class="section-container">
+          <div class="section-label-wrap">
+            <span class="section-num">04</span>
+            <span class="section-kicker">FEATURED PROJECTS</span>
+          </div>
+
+          <div class="section-intro-block">
+            <h2 class="section-title">Production web applications, machine learning models, and analytics dashboards.</h2>
+            <p class="section-subtitle">Real-world implementations solving tangible problems across hospitality, personal finance, predictive ML, and operations intelligence.</p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- PROJECT 01: Shantha Residency Website -->
+            <article class="project-card project-card-featured">
+              <div class="project-media">
+                <img src="public/projects/shantha-residency.jpg" alt="Shantha Residency Luxury Hotel Website Project" class="project-img" loading="lazy" />
+                <div class="project-overlay-badge">FEATURED WORK</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 01</span>
+                  <span class="project-cat">Web Development • Hospitality UI/UX</span>
+                </div>
+                <h3 class="project-title">Shantha Residency Hotel Website</h3>
+                <p class="project-desc">
+                  A premium, responsive hospitality web platform created for Shantha Residency, a luxury boutique hotel located in Sagara, Karnataka.
+                </p>
+                <div class="project-detail-box">
+                  <div class="detail-item">
+                    <span class="detail-label">Problem Solved:</span>
+                    <span class="detail-text">Modernized guest acquisition by replacing offline manual inquiry channels with an intuitive, customer-friendly digital experience for browsing suites, hotel dining, and local attractions.</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Key Highlights:</span>
+                    <span class="detail-text">Comprehensive room &amp; restaurant information, mobile-responsive layout, and seamless direct WhatsApp &amp; phone integration for rapid customer reservation enquiries.</span>
+                  </div>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-pill">Next.js</span>
+                  <span class="tech-pill">TypeScript</span>
+                  <span class="tech-pill">Tailwind CSS</span>
+                  <span class="tech-pill">Responsive Design</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 02: Smart Spend AI -->
+            <article class="project-card">
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 02</span>
+                  <span class="project-cat">Mobile Application • Financial Intelligence</span>
+                </div>
+                <h3 class="project-title">Smart Spend AI</h3>
+                <p class="project-desc">
+                  A dual-purpose personal expense tracker and capital project management application designed for mobile devices.
+                </p>
+                <div class="project-detail-box">
+                  <div class="detail-item">
+                    <span class="detail-label">Problem Solved:</span>
+                    <span class="detail-text">Addresses the critical gap in existing finance apps which fail to cater to house construction workflows where spending occurs in phased milestones and requires photo/video evidence.</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Implemented Features:</span>
+                    <span class="detail-text">Daily expense logging, house construction project expense management, local SQLite database storage, weekly/monthly/yearly breakdown charts.</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Planned Roadmap:</span>
+                    <span class="detail-text">Receipt OCR camera scanning, cloud synchronization, and AI predictive overrun notifications.</span>
+                  </div>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-pill">Flutter</span>
+                  <span class="tech-pill">Dart</span>
+                  <span class="tech-pill">SQLite</span>
+                  <span class="tech-pill">Financial Analytics</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 03: Personal AI Assistant -->
+            <article class="project-card">
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 03</span>
+                  <span class="project-cat">Android Development • Voice AI</span>
+                </div>
+                <h3 class="project-title">Personal AI Assistant</h3>
+                <p class="project-desc">
+                  A lightweight voice-based Android assistant utility focused on hands-free system navigation and voice command execution.
+                </p>
+                <div class="project-detail-box">
+                  <div class="detail-item">
+                    <span class="detail-label">Problem Solved:</span>
+                    <span class="detail-text">Offers immediate, lightweight voice-to-action shortcuts for essential device tasks without requiring heavy third-party ecosystem dependencies.</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Implemented Features:</span>
+                    <span class="detail-text">Voice-based speech recognition, spoken command parser, automated launching of installed device applications, and real-time battery level and system time readouts.</span>
+                  </div>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-pill">Android SDK</span>
+                  <span class="tech-pill">Python / Java</span>
+                  <span class="tech-pill">Speech Recognition</span>
+                  <span class="tech-pill">System Intents</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 04: EV Charging Behavior Prediction -->
+            <article class="project-card">
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 04</span>
+                  <span class="project-cat">Machine Learning • Predictive Analytics</span>
+                </div>
+                <h3 class="project-title">EV Charging Behavior Prediction</h3>
+                <p class="project-desc">
+                  A predictive machine learning study evaluating electric vehicle charging session datasets to forecast energy consumption and duration.
+                </p>
+                <div class="project-detail-box">
+                  <div class="detail-item">
+                    <span class="detail-label">Problem Solved:</span>
+                    <span class="detail-text">Helps charging network operators and urban planners forecast grid energy demand and charging bay occupancy by modeling consumer charging habits.</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Implementation Highlights:</span>
+                    <span class="detail-text">Comprehensive exploratory data analysis, feature engineering (state of charge, time of day), and comparative performance benchmarking of Linear Regression, Decision Tree, and Random Forest models.</span>
+                  </div>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">Scikit-learn</span>
+                  <span class="tech-pill">Pandas</span>
+                  <span class="tech-pill">Matplotlib</span>
+                  <span class="tech-pill">Seaborn</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 05: Bengaluru House Price Prediction -->
+            <article class="project-card project-card-featured">
+              <div class="project-media">
+                <img src="public/projects/bengaluru-house-price.png" alt="Bengaluru House Price Prediction Flask Application" class="project-img" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 05</span>
+                  <span class="project-cat">Machine Learning • Full-Stack Web App</span>
+                </div>
+                <h3 class="project-title">Bengaluru House Price Prediction</h3>
+                <p class="project-desc">
+                  An end-to-end machine learning web application estimating real estate property values across Bengaluru locations based on key architectural features.
+                </p>
+                <div class="project-detail-box">
+                  <div class="detail-item">
+                    <span class="detail-label">Problem Solved:</span>
+                    <span class="detail-text">Eliminates opaque property valuation by providing transparent, algorithmic price estimations derived from 13,000+ historical transaction records.</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Implementation Highlights:</span>
+                    <span class="detail-text">Rigorous data cleaning and outlier removal (standard deviation filtering, square-foot-per-BHK validation), one-hot location encoding, trained regression model exported to pickle, and lightweight Flask REST API with web frontend.</span>
+                  </div>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">Flask</span>
+                  <span class="tech-pill">Scikit-learn</span>
+                  <span class="tech-pill">NumPy</span>
+                  <span class="tech-pill">HTML / CSS / JS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Pramatha1209/Bengaluru-house-price-prediction" class="project-btn" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>View GitHub Repository</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 06: Power BI Operations & Retail Analytics -->
+            <article class="project-card">
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 06</span>
+                  <span class="project-cat">Business Intelligence • Operations Analytics</span>
+                </div>
+                <h3 class="project-title">Power BI Operations &amp; Retail Analytics</h3>
+                <p class="project-desc">
+                  An enterprise business intelligence dashboard analyzing quick-commerce delivery intelligence and retail dataset operations (Blinkit Operations).
+                </p>
+                <div class="project-detail-box">
+                  <div class="detail-item">
+                    <span class="detail-label">Problem Solved:</span>
+                    <span class="detail-text">Translates complex delivery and sales logs into structured executive reporting for evaluating rider efficiency, delivery delays, and service level adherence.</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Implementation Highlights:</span>
+                    <span class="detail-text">Analyzed 2,900+ delivery records using SQL, Excel, and Power BI; constructed DAX measures for delay rates and rider performance; designed interactive dashboards for resource planning.</span>
+                  </div>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-pill">Microsoft Power BI</span>
+                  <span class="tech-pill">DAX</span>
+                  <span class="tech-pill">SQL</span>
+                  <span class="tech-pill">Advanced Excel</span>
+                  <span class="tech-pill">Data Modeling</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION SECTION -->
+      <section id="education" class="section education-section" aria-label="Education">
+        <div class="section-container">
+          <div class="section-label-wrap">
+            <span class="section-num">05</span>
+            <span class="section-kicker">ACADEMIC FOUNDATION</span>
+          </div>
+
+          <div class="section-intro-block">
+            <h2 class="section-title">Formal engineering education and academic background.</h2>
+          </div>
+
+          <div class="education-card">
+            <div class="edu-header">
+              <div>
+                <span class="edu-degree">Bachelor of Engineering (B.E.)</span>
+                <h3 class="edu-field">Electronics and Communication Engineering</h3>
+              </div>
+              <div class="edu-badge">
+                <span class="edu-grad">Graduated: 2026</span>
+                <span class="edu-years">2022 — 2026</span>
+              </div>
+            </div>
+
+            <div class="edu-school">
+              <span class="school-name">Nitte Meenakshi Institute of Technology</span>
+              <span class="school-loc">Bengaluru, Karnataka, India</span>
+            </div>
+
+            <p class="edu-desc">
+              Rigorous undergraduate engineering program developing foundational problem-solving abilities across mathematics, signal processing, digital system architecture, microcontrollers, and computer networks. Applied theoretical knowledge through hands-on data science, statistical analysis, and machine learning capstone projects.
+            </p>
+
+            <div class="edu-tags">
+              <span class="edu-tag">Analytical Problem Solving</span>
+              <span class="edu-tag">Data Structures &amp; Algorithms</span>
+              <span class="edu-tag">Digital Signal Processing</span>
+              <span class="edu-tag">Embedded Systems</span>
+              <span class="edu-tag">Probability &amp; Statistics</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS SECTION -->
+      <section id="certifications" class="section certifications-section" aria-label="Certifications">
+        <div class="section-container">
+          <div class="section-label-wrap">
+            <span class="section-num">06</span>
+            <span class="section-kicker">VERIFIED CERTIFICATIONS</span>
+          </div>
+
+          <div class="section-intro-block">
+            <h2 class="section-title">Verified learning, credentials, and specialized training.</h2>
+            <p class="section-subtitle">Accurate records of completed coursework, industry internships, and professional learning programs.</p>
+          </div>
+
+          <div class="certifications-grid">
+            <!-- Cert 1 -->
+            <div class="cert-card">
+              <div class="cert-meta">
+                <span class="cert-year">2025</span>
+                <span class="cert-status status-completed">COMPLETED</span>
+              </div>
+              <h3 class="cert-title">Python for Data Analytics and Machine Learning Bootcamp</h3>
+              <h4 class="cert-issuer">Udemy</h4>
+              <p class="cert-desc">Intensive practical curriculum covering Python, NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, and predictive modeling algorithms.</p>
+            </div>
+
+            <!-- Cert 2 -->
+            <div class="cert-card">
+              <div class="cert-meta">
+                <span class="cert-year">2024</span>
+                <span class="cert-status status-completed">VERIFIED</span>
+              </div>
+              <h3 class="cert-title">Data Science Internship Completion Certificate</h3>
+              <h4 class="cert-issuer">Place Mantra</h4>
+              <p class="cert-desc">Industry credential validating 2024 remote internship performance in exploratory data analysis, SQL data querying, ETL pipelines, and Power BI dashboards.</p>
+            </div>
+
+            <!-- Cert 3 -->
+            <div class="cert-card">
+              <div class="cert-meta">
+                <span class="cert-year">2024</span>
+                <span class="cert-status status-completed">COMPLETED</span>
+              </div>
+              <h3 class="cert-title">Discovering Entrepreneurship</h3>
+              <h4 class="cert-issuer">Cisco Networking Academy</h4>
+              <p class="cert-desc">Foundational training in tech entrepreneurial concepts, customer value proposition analysis, and software product development lifecycles.</p>
+            </div>
+
+            <!-- Cert 4 -->
+            <div class="cert-card">
+              <div class="cert-meta">
+                <span class="cert-year">2024 — 2025</span>
+                <span class="cert-status status-completed">COURSEWORK COMPLETED</span>
+              </div>
+              <h3 class="cert-title">Power BI &amp; Business Analytics Training</h3>
+              <h4 class="cert-issuer">Professional Coursework</h4>
+              <p class="cert-desc">In-depth hands-on study in data transformation with Power Query, DAX calculated measures, data modeling, and interactive executive reporting.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT SECTION (CINEMATIC DARK CHARCOAL) -->
+    <section id="contact" class="section contact-section" aria-label="Contact Section">
+      <div class="contact-container">
+        <div class="contact-header">
+          <span class="contact-kicker">GET IN TOUCH</span>
+          <h2 class="contact-title">
+            LET’S BUILD<br />
+            <span>SOMETHING MEANINGFUL.</span>
+          </h2>
+          <p class="contact-subtitle">
+            Interested in data analytics, machine learning, AI applications, or discussing new opportunities? Let’s connect.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Direct Channels -->
+          <div class="contact-info-panel">
+            <h3 class="panel-heading">Direct Channels</h3>
+
+            <!-- Email Card -->
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-card-content">
+                <span class="contact-card-label">EMAIL ADDRESS</span>
+                <a href="mailto:hdpramatha17@gmail.com" class="contact-card-link">hdpramatha17@gmail.com</a>
+              </div>
+              <button class="btn-copy" id="btn-copy-email" data-email="hdpramatha17@gmail.com" title="Copy email address" aria-label="Copy email address">
+                <svg class="copy-icon-default" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span class="copy-text">Copy</span>
+              </button>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-card-content">
+                <span class="contact-card-label">PHONE</span>
+                <a href="tel:+918217561968" class="contact-card-link">+91 82175 61968</a>
+              </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-card-content">
+                <span class="contact-card-label">LOCATION</span>
+                <span class="contact-card-text">Bengaluru, Karnataka, India</span>
+              </div>
+            </div>
+
+            <!-- Profiles & Documents -->
+            <div class="social-links-grid">
+              <a href="https://github.com/Pramatha1209" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit GitHub Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+
+              <a href="https://linkedin.com/in/pramatha-hd" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit LinkedIn Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <a href="public/Pramatha_Resume.pdf" target="_blank" rel="noopener noreferrer" class="social-btn highlight-btn" download="Pramatha_H_D_Resume.pdf" aria-label="Download Official Resume PDF">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Message Form -->
+          <div class="contact-form-panel">
+            <h3 class="panel-heading">Send a Quick Note</h3>
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="form-name" class="form-label">YOUR NAME</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Maya Sharma" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">YOUR EMAIL</label>
+                <input type="email" id="form-email" class="form-input" placeholder="e.g. name@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">SUBJECT / OPPORTUNITY</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="e.g. Data Analytics / AI Role" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">MESSAGE</label>
+                <textarea id="form-message" class="form-textarea" rows="4" placeholder="Hello Pramatha, I would like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-copper btn-block" id="form-submit-btn">
+                <span>Send Message via Email</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+
+              <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CINEMATIC FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">PRAMATHA H D</span>
+          <p class="footer-tagline">Electronics &amp; Communication Engineering Graduate • Data • Analytics • AI</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer Navigation">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 Pramatha H D. All rights reserved.</p>
+        <div class="footer-actions">
+          <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to top">
+            <span>Back to top</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="portfolio.js"></script>
+</body>
+</html>

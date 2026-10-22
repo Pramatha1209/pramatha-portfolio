@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pramatha H D — 240-Frame Animated Portfolio</title>
+  <meta name="description" content="One continuous scroll-driven animated portfolio for Pramatha H D. 240-frame portrait sequence synchronized with Data Analytics, AI, and Software Engineering." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Fixed Storytelling Navigation Header -->
+  <header class="story-navbar" id="story-navbar">
+    <div class="nav-container">
+      <button class="nav-brand-btn" data-target-progress="0" aria-label="Scroll to Beginning">
+        <span class="brand-monogram">PRAMATHA H D</span>
+        <span class="brand-sub">240-FRAME EXPERIENCE</span>
+      </button>
+
+      <!-- Clickable Story Phase Navigation -->
+      <nav class="phase-nav" id="phase-nav" aria-label="Story Progression">
+        <button class="phase-nav-btn active" data-phase="0">01 Intro</button>
+        <button class="phase-nav-btn" data-phase="1">02 About</button>
+        <button class="phase-nav-btn" data-phase="2">03 Skills</button>
+        <button class="phase-nav-btn" data-phase="3">04 Experience</button>
+        <button class="phase-nav-btn" data-phase="4">05 Projects</button>
+        <button class="phase-nav-btn" data-phase="5">06 Education</button>
+        <button class="phase-nav-btn" data-phase="6">07 Contact</button>
+      </nav>
+
+      <div class="nav-right">
+        <a href="public/Pramatha_Resume.pdf" class="btn btn-nav-resume" target="_blank" rel="noopener noreferrer" download="Pramatha_H_D_Resume.pdf" aria-label="Download Official Resume PDF">
+          <span>Resume</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SINGLE CONTINUOUS SCROLL TRACK (800vh provides spacious, cinematic pacing for 240 frames) -->
+  <main class="story-scroll-track" id="story-track" aria-label="240-Frame Interactive Portfolio">
+    
+    <!-- Pinned Viewport Container (Fixed stage containing canvas backdrop and synchronized content phases) -->
+    <div class="story-stage" id="story-stage">
+      
+      <!-- Hardware-accelerated 240-Frame Portrait Canvas -->
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+      <!-- Editorial Ambient Vignette ensuring high-contrast legibility while preserving facial focal point -->
+      <div class="stage-vignette" aria-hidden="true"></div>
+
+      <!-- Synchronized Content Phases Layer -->
+      <div class="story-phases-wrapper">
+
+        <!-- ==========================================================================
+             PHASE 1: INTRODUCTION (Frames 1–30 / Progress 0.00 – 0.12)
+             ========================================================================== -->
+        <section class="phase-panel phase-intro active" id="phase-0" data-phase-index="0" aria-label="Phase 1: Introduction">
+          <div class="phase-content-lockup left-bottom">
+            <div class="editorial-kicker">
+              <span class="kicker-pulse"></span>
+              <span class="kicker-text">DATA ANALYTICS · AI · SOFTWARE DEVELOPMENT</span>
+            </div>
+
+            <h1 class="phase-main-title">PRAMATHA H D</h1>
+
+            <p class="phase-lead-text">
+              Electronics and Communication Engineering graduate (2026) passionate about uncovering analytical insights, building robust machine learning models, and engineering intelligent software applications.
+            </p>
+
+            <div class="phase-actions-row">
+              <button class="btn btn-copper btn-jump" data-target-progress="0.48">
+                <span>Explore Projects</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </button>
+              <button class="btn btn-ghost-light btn-jump" data-target-progress="0.79">
+                <span>Contact Me</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             PHASE 2: ABOUT ME (Frames 31–58 / Progress 0.13 – 0.24)
+             ========================================================================== -->
+        <section class="phase-panel phase-about" id="phase-1" data-phase-index="1" aria-label="Phase 2: About Me">
+          <div class="phase-content-lockup left-center max-w-lg">
+            <div class="story-card">
+              <div class="card-tag-row">
+                <span class="card-phase-num">02 / ABOUT ME</span>
+                <span class="card-phase-sub">ACADEMIC &amp; PHILOSOPHY</span>
+              </div>
+
+              <h2 class="card-headline">Engineering practical solutions from data and code.</h2>
+
+              <p class="card-body-text">
+                Graduate in Electronics and Communication Engineering from Nitte Meenakshi Institute of Technology (NMIT), Bangalore (Class of 2026).
+              </p>
+
+              <div class="pillars-list">
+                <div class="pillar-row">
+                  <span class="pillar-bullet">01</span>
+                  <div>
+                    <h4 class="pillar-heading">Practical Problem Solving</h4>
+                    <p class="pillar-desc">Designing measurable solutions tailored to real operational bottlenecks rather than abstract models.</p>
+                  </div>
+                </div>
+
+                <div class="pillar-row">
+                  <span class="pillar-bullet">02</span>
+                  <div>
+                    <h4 class="pillar-heading">Analytical &amp; Software Fusion</h4>
+                    <p class="pillar-desc">Combining rigorous exploratory data analysis with clean, maintainable software architecture.</p>
+                  </div>
+                </div>
+
+                <div class="pillar-row">
+                  <span class="pillar-bullet">03</span>
+                  <div>
+                    <h4 class="pillar-heading">Learning by Building</h4>
+                    <p class="pillar-desc">An active builder mentality—deepening technical intuition through rapid prototyping and experimentation.</p>
+                  </div>
+                </div>
+
+                <div class="pillar-row">
+                  <span class="pillar-bullet">04</span>
+                  <div>
+                    <h4 class="pillar-heading">Ideas to Deployed Products</h4>
+                    <p class="pillar-desc">Taking concepts from raw datasets to intuitive, user-facing digital applications.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             PHASE 3: TECHNICAL SKILLS (Frames 59–88 / Progress 0.25 – 0.36)
+             ========================================================================== -->
+        <section class="phase-panel phase-skills" id="phase-2" data-phase-index="2" aria-label="Phase 3: Technical Skills">
+          <div class="phase-content-lockup right-center max-w-xl">
+            <div class="story-card">
+              <div class="card-tag-row">
+                <span class="card-phase-num">03 / TECHNICAL SKILLS</span>
+                <span class="card-phase-sub">CORE COMPETENCIES</span>
+              </div>
+
+              <h2 class="card-headline">Specialized tools across data, AI, and development.</h2>
+
+              <div class="skills-editorial-grid">
+                <!-- Group 1 -->
+                <div class="skill-category-block">
+                  <div class="category-title-bar">
+                    <span class="cat-idx">01</span>
+                    <h3 class="cat-name">Programming &amp; Data</h3>
+                  </div>
+                  <div class="chips-wrap">
+                    <span class="tech-chip">Python</span>
+                    <span class="tech-chip">SQL</span>
+                    <span class="tech-chip">MySQL</span>
+                    <span class="tech-chip">Pandas</span>
+                    <span class="tech-chip">NumPy</span>
+                  </div>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="skill-category-block">
+                  <div class="category-title-bar">
+                    <span class="cat-idx">02</span>
+                    <h3 class="cat-name">Analytics &amp; Visualization</h3>
+                  </div>
+                  <div class="chips-wrap">
+                    <span class="tech-chip">Power BI</span>
+                    <span class="tech-chip">Matplotlib</span>
+                    <span class="tech-chip">Seaborn</span>
+                    <span class="tech-chip">DAX Modeling</span>
+                    <span class="tech-chip">EDA</span>
+                  </div>
+                </div>
+
+                <!-- Group 3 -->
+                <div class="skill-category-block">
+                  <div class="category-title-bar">
+                    <span class="cat-idx">03</span>
+                    <h3 class="cat-name">Machine Learning &amp; AI</h3>
+                  </div>
+                  <div class="chips-wrap">
+                    <span class="tech-chip">Scikit-learn</span>
+                    <span class="tech-chip">TensorFlow / Keras</span>
+                    <span class="tech-chip">Predictive Modelling</span>
+                    <span class="tech-chip">Recommendation Systems</span>
+                  </div>
+                </div>
+
+                <!-- Group 4 -->
+                <div class="skill-category-block">
+                  <div class="category-title-bar">
+                    <span class="cat-idx">04</span>
+                    <h3 class="cat-name">Application Engineering</h3>
+                  </div>
+                  <div class="chips-wrap">
+                    <span class="tech-chip">Flask</span>
+                    <span class="tech-chip">Flutter</span>
+                    <span class="tech-chip">Git &amp; GitHub</span>
+                    <span class="tech-chip">REST APIs</span>
+                    <span class="tech-chip">Jupyter</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             PHASE 4: EXPERIENCE & LEARNING (Frames 89–114 / Progress 0.37 – 0.47)
+             ========================================================================== -->
+        <section class="phase-panel phase-experience" id="phase-3" data-phase-index="3" aria-label="Phase 4: Experience & Learning">
+          <div class="phase-content-lockup left-center max-w-xl">
+            <div class="story-card">
+              <div class="card-tag-row">
+                <span class="card-phase-num">04 / EXPERIENCE &amp; INITIATIVES</span>
+                <span class="card-phase-sub">VERIFIED INDUSTRY PRACTICE</span>
+              </div>
+
+              <!-- Verified Internship -->
+              <div class="experience-block">
+                <div class="exp-header-bar">
+                  <div>
+                    <h3 class="exp-role">Data Science Intern</h3>
+                    <h4 class="exp-company">Place Mantra · Remote</h4>
+                  </div>
+                  <span class="exp-badge">2024</span>
+                </div>
+                <ul class="exp-list">
+                  <li>Performed exploratory data analysis using Python and SQL to uncover business patterns, improving recommendation algorithms by 25%.</li>
+                  <li>Engineered automated ETL workflows for structured multi-source datasets.</li>
+                  <li>Created and deployed interactive Power BI dashboards for operational KPIs and executive reporting.</li>
+                </ul>
+              </div>
+
+              <!-- Currently Building Area -->
+              <div class="building-subblock">
+                <div class="building-badge-row">
+                  <span class="pulse-core-tiny"></span>
+                  <span class="building-badge-text">CURRENTLY BUILDING &amp; EXPERIMENTING</span>
+                </div>
+                <div class="building-mini-grid">
+                  <div class="building-mini-item">
+                    <span class="mini-title">Personal AI Assistant</span>
+                    <p class="mini-desc">Android voice assistant with spoken command execution, app launching, and battery telemetry.</p>
+                  </div>
+                  <div class="building-mini-item">
+                    <span class="mini-title">Smart Spend AI</span>
+                    <p class="mini-desc">Flutter &amp; SQLite tracker with house construction milestone budget &amp; media records.</p>
+                  </div>
+                  <div class="building-mini-item">
+                    <span class="mini-title">Intelligent Automation</span>
+                    <p class="mini-desc">Multi-agent tool orchestration, workflow automation, and predictive data pipelines.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             PHASE 5: FEATURED PROJECTS (Frames 115–162 / Progress 0.48 – 0.67)
+             ========================================================================== -->
+        <section class="phase-panel phase-projects" id="phase-4" data-phase-index="4" aria-label="Phase 5: Featured Projects">
+          <div class="phase-content-lockup center max-w-3xl">
+            <div class="story-card projects-card-container">
+              <div class="card-tag-row">
+                <span class="card-phase-num">05 / FEATURED PROJECTS</span>
+                <span class="card-phase-sub">PRODUCTION SYSTEMS &amp; MACHINE LEARNING</span>
+              </div>
+
+              <div class="projects-scroller-grid">
+                <!-- Project 1 -->
+                <div class="project-mini-card">
+                  <div class="proj-header">
+                    <span class="proj-num">01 · WEB</span>
+                    <h3 class="proj-name">Shantha Residency Website</h3>
+                  </div>
+                  <p class="proj-desc">Premium hospitality platform for luxury boutique hotel in Sagara, Karnataka. Features interactive room showcase, restaurant info, and direct WhatsApp/call reservation booking.</p>
+                  <div class="proj-tech">
+                    <span class="tech-chip">Next.js</span>
+                    <span class="tech-chip">TypeScript</span>
+                    <span class="tech-chip">Tailwind CSS</span>
+                  </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-mini-card">
+                  <div class="proj-header">
+                    <span class="proj-num">02 · MOBILE</span>
+                    <h3 class="proj-name">Smart Spend AI</h3>
+                  </div>
+                  <p class="proj-desc">Dual-purpose personal and capital project expense tracking application with specialized house construction milestone management and photo/video evidence records.</p>
+                  <div class="proj-tech">
+                    <span class="tech-chip">Flutter</span>
+                    <span class="tech-chip">Dart</span>
+                    <span class="tech-chip">SQLite</span>
+                  </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-mini-card">
+                  <div class="proj-header">
+                    <span class="proj-num">03 · VOICE AI</span>
+                    <h3 class="proj-name">Personal AI Assistant</h3>
+                  </div>
+                  <p class="proj-desc">Native Android voice assistant providing hands-free speech recognition, spoken command parser, automated app launching, and real-time battery/time telemetry.</p>
+                  <div class="proj-tech">
+                    <span class="tech-chip">Android SDK</span>
+                    <span class="tech-chip">Python</span>
+                    <span class="tech-chip">Speech APIs</span>
+                  </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-mini-card">
+                  <div class="proj-header">
+                    <span class="proj-num">04 · ML STUDY</span>
+                    <h3 class="proj-name">EV Charging Behavior Prediction</h3>
+                  </div>
+                  <p class="proj-desc">Machine learning study on EV charging patterns forecasting energy consumption and duration. Benchmarked Linear Regression, Decision Tree, and Random Forest models.</p>
+                  <div class="proj-tech">
+                    <span class="tech-chip">Python</span>
+                    <span class="tech-chip">Scikit-learn</span>
+                    <span class="tech-chip">Pandas</span>
+                  </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-mini-card">
+                  <div class="proj-header">
+                    <span class="proj-num">05 · FULL-STACK ML</span>
+                    <h3 class="proj-name">Bengaluru House Price Prediction</h3>
+                  </div>
+                  <p class="proj-desc">Real estate valuation web app trained on 13,000+ property records with outlier filtering, one-hot encoding, and a Flask REST API. Includes interactive web frontend.</p>
+                  <div class="proj-tech">
+                    <span class="tech-chip">Flask</span>
+                    <span class="tech-chip">Python</span>
+                    <a href="https://github.com/Pramatha1209/Bengaluru-house-price-prediction" class="proj-link-mini" target="_blank" rel="noopener noreferrer">GitHub →</a>
+                  </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-mini-card">
+                  <div class="proj-header">
+                    <span class="proj-num">06 · BI DASHBOARD</span>
+                    <h3 class="proj-name">Power BI Operations Analytics</h3>
+                  </div>
+                  <p class="proj-desc">Executive business intelligence suite analyzing quick-commerce delivery operations (Blinkit 2,900+ delivery records), DAX measures, rider efficiency, and delay attribution.</p>
+                  <div class="proj-tech">
+                    <span class="tech-chip">Power BI</span>
+                    <span class="tech-chip">DAX</span>
+                    <span class="tech-chip">SQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             PHASE 6: EDUCATION & CERTIFICATIONS (Frames 163–188 / Progress 0.68 – 0.78)
+             ========================================================================== -->
+        <section class="phase-panel phase-education" id="phase-5" data-phase-index="5" aria-label="Phase 6: Education & Certifications">
+          <div class="phase-content-lockup right-center max-w-xl">
+            <div class="story-card">
+              <div class="card-tag-row">
+                <span class="card-phase-num">06 / ACADEMIC FOUNDATION</span>
+                <span class="card-phase-sub">EDUCATION &amp; CREDENTIALS</span>
+              </div>
+
+              <!-- Education Block -->
+              <div class="edu-compact-block">
+                <span class="edu-deg-pill">B.E. ELECTRONICS &amp; COMMUNICATION ENGINEERING</span>
+                <h3 class="edu-inst-name">Nitte Meenakshi Institute of Technology</h3>
+                <span class="edu-grad-line">Bengaluru, Karnataka · Graduated: 2026 (2022 — 2026)</span>
+                <p class="edu-desc-mini">Rigorous engineering coursework in algorithms, computer networks, microcontrollers, digital signal processing, probability, and applied machine learning.</p>
+              </div>
+
+              <!-- Certifications Grid -->
+              <div class="cert-compact-list">
+                <span class="cert-section-header">VERIFIED CERTIFICATIONS</span>
+                <div class="cert-compact-row">
+                  <span class="cert-badge">2025</span>
+                  <div>
+                    <h4 class="cert-item-title">Python for Data Analytics &amp; Machine Learning Bootcamp</h4>
+                    <span class="cert-item-issuer">Udemy · Comprehensive ML &amp; Data Analysis</span>
+                  </div>
+                </div>
+
+                <div class="cert-compact-row">
+                  <span class="cert-badge">2024</span>
+                  <div>
+                    <h4 class="cert-item-title">Data Science Internship Completion Certificate</h4>
+                    <span class="cert-item-issuer">Place Mantra · EDA, SQL Pipelines &amp; Power BI</span>
+                  </div>
+                </div>
+
+                <div class="cert-compact-row">
+                  <span class="cert-badge">2024</span>
+                  <div>
+                    <h4 class="cert-item-title">Discovering Entrepreneurship</h4>
+                    <span class="cert-item-issuer">Cisco Networking Academy · Product Innovation</span>
+                  </div>
+                </div>
+
+                <div class="cert-compact-row">
+                  <span class="cert-badge">2024–25</span>
+                  <div>
+                    <h4 class="cert-item-title">Power BI &amp; Business Analytics Training</h4>
+                    <span class="cert-item-issuer">Professional Coursework · DAX &amp; Executive Reporting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             PHASE 7: CONTACT & CLOSING (Frames 189–222 / Progress 0.79 – 0.92)
+             ========================================================================== -->
+        <section class="phase-panel phase-contact" id="phase-6" data-phase-index="6" aria-label="Phase 7: Contact & Closing">
+          <div class="phase-content-lockup center max-w-xl">
+            <div class="story-card contact-story-card">
+              <div class="card-tag-row">
+                <span class="card-phase-num">07 / GET IN TOUCH</span>
+                <span class="card-phase-sub">LET'S CONNECT</span>
+              </div>
+
+              <h2 class="contact-story-title">
+                LET’S BUILD<br />
+                <span>SOMETHING MEANINGFUL.</span>
+              </h2>
+
+              <p class="contact-story-desc">
+                Interested in data analytics, artificial intelligence, software development, or exploring opportunities? Let's connect.
+              </p>
+
+              <!-- Verified Direct Channels -->
+              <div class="contact-actions-grid">
+                <!-- Email Item -->
+                <div class="contact-box">
+                  <div class="contact-box-left">
+                    <span class="box-label">EMAIL ADDRESS</span>
+                    <a href="mailto:hdpramatha17@gmail.com" class="box-link">hdpramatha17@gmail.com</a>
+                  </div>
+                  <button class="btn-copy-mini" id="btn-copy-email" data-email="hdpramatha17@gmail.com" title="Copy Email">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <span class="copy-label">Copy</span>
+                  </button>
+                </div>
+
+                <!-- Phone Item -->
+                <div class="contact-box">
+                  <div class="contact-box-left">
+                    <span class="box-label">PHONE</span>
+                    <a href="tel:+918217561968" class="box-link">+91 82175 61968</a>
+                  </div>
+                  <span class="box-meta">Bengaluru, IN</span>
+                </div>
+              </div>
+
+              <!-- Social Links & Resume Download -->
+              <div class="contact-social-row">
+                <a href="https://github.com/Pramatha1209" target="_blank" rel="noopener noreferrer" class="btn btn-dark-outline" aria-label="Visit GitHub Profile">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub</span>
+                </a>
+
+                <a href="https://linkedin.com/in/pramatha-hd" target="_blank" rel="noopener noreferrer" class="btn btn-dark-outline" aria-label="Visit LinkedIn Profile">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>LinkedIn</span>
+                </a>
+
+                <a href="public/Pramatha_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-copper" download="Pramatha_H_D_Resume.pdf" aria-label="Download Official Resume PDF">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span>Download Resume (PDF)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             PHASE 8: CLOSING HOLD (Frames 223–240 / Progress 0.93 – 1.00)
+             ========================================================================== -->
+        <section class="phase-panel phase-closing" id="phase-7" data-phase-index="7" aria-label="Closing Visual Hold">
+          <div class="phase-content-lockup center max-w-md text-center">
+            <div class="closing-signature-card">
+              <span class="closing-kicker">END OF STORYTELLING SEQUENCE</span>
+              <h2 class="closing-brand">PRAMATHA H D</h2>
+              <p class="closing-desc">Data Analytics · Artificial Intelligence · Software Development</p>
+              <span class="closing-copy">© 2026 Pramatha H D. All rights reserved.</span>
+
+              <div class="closing-action-wrap">
+                <button class="btn btn-copper btn-jump" data-target-progress="0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M18 15l-6-6-6 6"/></svg>
+                  <span>Replay Story from Beginning</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Real-time HUD Telemetry Bar at Bottom -->
+      <footer class="story-hud-bottom">
+        <div class="hud-item hud-phase-indicator">
+          <span class="hud-label">CURRENT PHASE</span>
+          <span class="hud-val" id="hud-phase-name">01 · INTRODUCTION</span>
+        </div>
+
+        <!-- Center Timeline Progress Bar -->
+        <div class="hud-progress-container" aria-hidden="true">
+          <div class="hud-progress-bar" id="hud-progress-bar"></div>
+        </div>
+
+        <div class="hud-item hud-frame-indicator">
+          <span class="hud-label">FRAME SEQUENCE</span>
+          <span class="hud-val" id="hud-frame-num">001 / 240</span>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Luxury Animated Cursor (Desktop only, pointer-events: none) -->
+  <div class="luxury-cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="luxury-cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "pramatha-proto-scroll-animation",
+  "version": "1.0.0",
+  "description": "Smooth scroll sequence animation for hero-frames",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
