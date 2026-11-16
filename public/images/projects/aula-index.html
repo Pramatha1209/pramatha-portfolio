@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>AULA F3287 — Tenkeyless Mechanical Keyboard</title>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css?v=aula-f3287-v10">
+</head>
+<body class="theme-monochrome">
+
+  <!-- Atmospheric Background (Vignette, Subtle Ambient Lighting, Minimal Film Grain) -->
+  <div class="viewport-atmosphere">
+    <div class="ambient-glow glow-center"></div>
+    <div class="ambient-glow glow-accent"></div>
+    <div class="film-grain"></div>
+  </div>
+
+  <!-- Scroll Height Generator (Drives the timeline inside the frame) -->
+  <div class="scroll-height-track" id="scroll-track"></div>
+
+  <!-- =========================================================================
+       THE CONTINUOUS FLOATING GLASS DISPLAY FRAME (THE ENTIRE WEBSITE LIVES HERE)
+       ========================================================================= -->
+  <main class="master-display-frame" id="master-frame">
+
+    <!-- Subtle Glass Edge Highlights & Inner Shadows -->
+    <div class="frame-glass-highlight"></div>
+    <div class="frame-glass-reflection"></div>
+    <div class="frame-vignette"></div>
+
+    <!-- PRELOADER SCREEN (Inside the frame) -->
+    <div id="loader" class="frame-loader">
+      <div class="loader-content">
+        <span class="loader-tag">AULA HARDWARE LABS</span>
+        <h2 class="loader-title">F3287 <span>TKL</span></h2>
+        <div class="loader-bar-track">
+          <div id="loader-bar" class="loader-bar-fill"></div>
+        </div>
+        <div class="loader-meta">
+          <span id="loader-status">Preloading 300 sequential frames...</span>
+          <span id="loader-percent">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME HEADER NAVIGATION (Minimal, integrated inside frame) -->
+    <header class="frame-header">
+      <div class="frame-brand">
+        <div class="brand-glyph">
+          <span class="glyph-line"></span>
+          <span class="glyph-core"></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AULA <strong>F3287</strong></span>
+          <span class="brand-subtitle">TKL MECHANICAL</span>
+        </div>
+      </div>
+
+      <!-- Quick Chapter Timeline Jump Buttons -->
+      <nav class="frame-nav">
+        <button class="nav-chapter-btn active" data-progress="0">Overview</button>
+        <button class="nav-chapter-btn" data-progress="0.22">Headline</button>
+        <button class="nav-chapter-btn" data-progress="0.40">Craft</button>
+        <button class="nav-chapter-btn" data-progress="0.60">Switches</button>
+        <button class="nav-chapter-btn" data-progress="0.79">Lighting</button>
+        <button class="nav-chapter-btn" data-progress="0.95">Finale</button>
+      </nav>
+
+      <div class="frame-header-actions">
+        <button id="sound-btn" class="frame-action-btn" title="Toggle Mechanical Audio FX">
+          <svg class="sound-off-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15"/>
+            <line x1="17" y1="9" x2="23" y2="15"/>
+          </svg>
+          <svg class="sound-on-icon hidden" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span id="sound-label">Audio</span>
+        </button>
+
+        <button id="autoplay-btn" class="frame-action-btn primary" title="Auto-advance product sequence">
+          <svg class="play-icon" viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          <svg class="pause-icon hidden" viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16"/>
+            <rect x="14" y="4" width="4" height="16"/>
+          </svg>
+          <span id="autoplay-label">Autoplay</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CANVAS VIEWPORT (Renders the 300 sequential original frames) -->
+    <div class="frame-canvas-stage">
+      <canvas id="sequence-canvas"></canvas>
+    </div>
+
+    <!-- =======================================================================
+         STORYTELLING EXPERIENCES
+         Positioned strictly in the perimeter negative space around the keyboard!
+         ======================================================================= -->
+        <div class="frame-story-container" id="story-container">
+
+      <!-- ACT 0: OPENING BRAND IDENTITY (0% - 12%) -->
+      <div class="story-act act-brand active" data-act="0">
+        <div class="act-flank-left">
+          <div class="editorial-badge">
+            <span class="badge-dot"></span>
+            <span>AULA HARDWARE LABS</span>
+          </div>
+
+          <h2 class="editorial-title">
+            F3287 <span class="editorial-accent">/ TENKEYLESS</span>
+          </h2>
+
+          <p class="editorial-subtitle">
+            Precision mechanical engineering. Pure tactile performance.
+          </p>
+        </div>
+
+        <div class="act-flank-right">
+          <div class="editorial-specs-stack">
+            <span class="editorial-pill">87-Key Architecture</span>
+            <span class="editorial-pill">Blue Mechanical Switch</span>
+            <span class="editorial-pill">Sandblasted Aluminium Plate</span>
+          </div>
+
+          <div class="scroll-cue">
+            <span class="mouse-icon"><span class="mouse-wheel"></span></span>
+            <span class="cue-text">SCROLL TO EXPLORE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACT 1: MAIN HEADLINE (14% - 30%) -->
+      <div class="story-act act-headline-act" data-act="1">
+        <div class="act-flank-left">
+          <div class="editorial-badge">
+            <span class="badge-dot"></span>
+            <span>AULA F3287 // MECHANICAL</span>
+          </div>
+
+          <h1 class="hero-headline">
+            EVERY KEYSTROKE.<br>
+            <span class="editorial-accent">A DIFFERENT EXPERIENCE.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Precision. Performance. Pure mechanical satisfaction.
+          </p>
+        </div>
+
+        <div class="act-flank-right">
+          <div class="editorial-meta-box">
+            <span class="meta-label">CHASSIS PROFILE</span>
+            <span class="meta-val">TENKEYLESS TKL 87</span>
+            <span class="meta-sub">20% narrower workspace footprint</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACT 2: CRAFTSMANSHIP & RIGIDITY (32% - 50%) -->
+      <div class="story-act act-craft" data-act="2">
+        <div class="act-flank-left">
+          <div class="editorial-badge">
+            <span class="badge-dot"></span>
+            <span>SECTION 01 // ARCHITECTURE</span>
+          </div>
+
+          <h2 class="act-headline">
+            BUILT FOR<br>
+            <span class="editorial-accent">EVERY DETAIL.</span>
+          </h2>
+
+          <p class="act-subtitle">
+            Compact tenkeyless geometry balanced with high-rigidity aluminium alloy deck and double-shot injection keycaps.
+          </p>
+        </div>
+
+        <div class="act-flank-right">
+          <div class="editorial-annotation right">
+            <span class="anno-num">01</span>
+            <div class="anno-text">
+              <span class="anno-title">Aluminium Alloy Plate</span>
+              <span class="anno-desc">Solid sandblasted plate eliminates chassis flex.</span>
+            </div>
+          </div>
+
+          <div class="editorial-annotation right">
+            <span class="anno-num">02</span>
+            <div class="anno-text">
+              <span class="anno-title">Suspended Keycaps</span>
+              <span class="anno-desc">Floating stem housing radiates ambient lighting.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACT 3: TACTILE CORE & AUDIBLE CONFIRMATION (52% - 70%) -->
+      <div class="story-act act-switches" data-act="2">
+        <div class="act-flank-left">
+          <div class="editorial-badge">
+            <span class="badge-dot blue"></span>
+            <span>SECTION 02 // ACTUATION CORE</span>
+          </div>
+
+          <h2 class="act-headline">
+            FEEL EVERY<br>
+            <span class="editorial-accent">CLICK.</span>
+          </h2>
+
+          <p class="act-subtitle">
+            AULA Blue Mechanical Switches calibrated for unmistakable tactile confirmation and acoustic snap.
+          </p>
+
+          <div class="switch-specs-minimal">
+            <div class="spec-line"><span class="k">Actuation Force</span><span class="v">50 ± 10 gf</span></div>
+            <div class="spec-line"><span class="k">Pre-Travel</span><span class="v">2.0 ± 0.6 mm</span></div>
+            <div class="spec-line"><span class="k">Durability</span><span class="v">50,000,000 Keystrokes</span></div>
+          </div>
+        </div>
+
+        <div class="act-flank-right">
+          <div class="switch-micro-bench">
+            <div class="bench-header">
+              <span class="bench-tag">ACOUSTIC DEMONSTRATOR</span>
+            </div>
+
+            <button id="switch-trigger-btn" class="micro-press-btn" title="Click to test mechanical switch snap">
+              <span>TEST BLUE SWITCH</span>
+              <span class="btn-caption">Actuate to audition click leaf</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACT 4: ATMOSPHERIC ILLUMINATION (72% - 89%) -->
+      <div class="story-act act-lighting" data-act="3">
+        <div class="act-flank-left">
+          <div class="editorial-badge">
+            <span class="badge-dot"></span>
+            <span>SECTION 03 // AMBIENT ILLUMINATION</span>
+          </div>
+
+          <h2 class="act-headline">
+            LIGHT UP YOUR<br>
+            <span class="editorial-accent">WORKSPACE.</span>
+          </h2>
+
+          <p class="act-subtitle">
+            Ice Blue LED arrays radiating cleanly through suspended key stems with dynamic atmospheric modes.
+          </p>
+
+          <div class="lighting-mode-pills" id="lighting-modes">
+            <button class="mode-pill active" data-mode="static">01 Static</button>
+            <button class="mode-pill" data-mode="breathing">02 Breathing</button>
+            <button class="mode-pill" data-mode="wave">03 Wave</button>
+            <button class="mode-pill" data-mode="reactive">04 Reactive</button>
+            <button class="mode-pill" data-mode="gaming">05 Gaming WASD</button>
+          </div>
+        </div>
+
+        <div class="act-flank-right">
+          <!-- Enlarged, high-definition 87-key TKL lighting visualizer -->
+          <div class="micro-keyboard-wrapper">
+            <div class="wrapper-header">
+              <span class="ctrl-sub">87-KEY TKL ILLUMINATION MATRIX</span>
+              <span class="ctrl-tip">CLICK KEYS TO TEST</span>
+            </div>
+            <div class="micro-tkl-chassis" id="keyboard-visualizer">
+              <div class="micro-matrix" id="mini-key-grid"></div>
+            </div>
+            <div class="lighting-card-info" id="lighting-card-info">
+              <div class="lighting-mode-badge" id="lighting-mode-title">01 // STATIC LUMINESCENCE</div>
+              <p class="lighting-mode-desc" id="lighting-mode-desc">Continuous 465nm Ice Blue underglow radiating uniformly through suspended key stems.</p>
+              <div class="lighting-specs-row">
+                <span class="lighting-spec-tag">SPECTRUM: 465nm ICE BLUE</span>
+                <span class="lighting-spec-tag">ARRAY: 87 SUSPENDED STEMS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACT 5: FINAL LAUNCH / COMPETITIVE FOCUS (90% - 100%) -->
+      <div class="story-act act-final" data-act="4">
+        <div class="act-flank-left">
+          <div class="editorial-badge">
+            <span class="badge-dot"></span>
+            <span>AULA F3287 // TKL</span>
+          </div>
+
+          <h2 class="act-headline">
+            MAKE EVERY KEYSTROKE<br>
+            <span class="editorial-accent">COUNT.</span>
+          </h2>
+
+          <p class="act-subtitle">
+            87-Key N-Key Rollover · 1000Hz Polling Rate · 1ms Response. Engineered for tournament precision.
+          </p>
+        </div>
+
+        <div class="act-flank-right">
+          <div class="final-cta-cluster">
+            <button id="final-replay-btn" class="minimal-replay-btn" title="Replay cinematic experience">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"/>
+              </svg>
+              <span>Replay Film</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Technical Spec Modal / Overlay (Centered over the frame) -->
+  <div id="spec-modal" class="spec-modal-overlay">
+    <div class="spec-modal-backdrop"></div>
+    <div class="spec-modal-panel">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="badge-dot"></span>
+          <h3>AULA F3287 Technical Blueprint</h3>
+        </div>
+        <button id="close-modal-btn" class="modal-close-btn" aria-label="Close Blueprint">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-grid">
+        <div class="modal-cell"><span class="k">Model</span><span class="v">AULA F3287 TKL</span></div>
+        <div class="modal-cell"><span class="k">Key Count</span><span class="v">87 Keys (Tenkeyless)</span></div>
+        <div class="modal-cell"><span class="k">Switch Mechanism</span><span class="v">Clicky Blue Mechanical</span></div>
+        <div class="modal-cell"><span class="k">Keycap Construction</span><span class="v">Double-Shot Grey & White Composite</span></div>
+        <div class="modal-cell"><span class="k">Top Plate Material</span><span class="v">Anodized Sandblasted Aluminium</span></div>
+        <div class="modal-cell"><span class="k">Backlight Array</span><span class="v">Single-Colour Ice Blue LED (4 Modes)</span></div>
+        <div class="modal-cell"><span class="k">Anti-Ghosting</span><span class="v">Full 87-Key N-Key Rollover (NKRO)</span></div>
+        <div class="modal-cell"><span class="k">Polling Interval</span><span class="v">1000 Hz / 1.0 ms</span></div>
+        <div class="modal-cell"><span class="k">Dimensions</span><span class="v">35 × 13 × 1.5 cm</span></div>
+        <div class="modal-cell"><span class="k">Chassis Weight</span><span class="v">800 g</span></div>
+      </div>
+      <div class="modal-footer">
+        <span class="modal-hint">Official release scheduled. Specifications subject to engineering refinement.</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=aula-f3287-v10"></script>
+</body>
+</html>
