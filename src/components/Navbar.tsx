@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowUpRight, FileText, Sparkles } from "lucide-react";
+import { Menu, X, ArrowUpRight, FileText, Sparkles, Linkedin } from "lucide-react";
 
 const NAV_ITEMS = [
   { name: "Home", href: "#hero" },
@@ -113,7 +113,16 @@ export default function Navbar() {
           </nav>
 
           {/* Header Action Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5">
+            <a
+              href="https://www.linkedin.com/in/pramatha-hd/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="flex items-center justify-center w-8 h-8 rounded-lg text-neutral-300 hover:text-amber-300 bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-amber-400/40 transition-all"
+            >
+              <Linkedin className="w-3.5 h-3.5" />
+            </a>
             <a
               href="#resume"
               onClick={(e) => handleNavClick(e, "#resume")}
@@ -178,6 +187,15 @@ export default function Navbar() {
               })}
 
               <div className="pt-4 border-t border-white/10 flex flex-col gap-2.5 mt-2">
+                <a
+                  href="https://www.linkedin.com/in/pramatha-hd/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-mono text-neutral-200 bg-white/5 border border-white/10 hover:border-amber-400/40"
+                >
+                  <Linkedin className="w-4 h-4 text-amber-400" />
+                  <span>Connect on LinkedIn</span>
+                </a>
                 <a
                   href="#resume"
                   onClick={(e) => handleNavClick(e, "#resume")}

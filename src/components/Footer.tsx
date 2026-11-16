@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUp, MapPin, Clock } from "lucide-react";
+import { ArrowUp, MapPin, Clock, Linkedin, Github, Mail } from "lucide-react";
 
 export default function Footer() {
   const [currentTime, setCurrentTime] = useState<string>("");
@@ -60,15 +60,45 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Back to top button */}
-          <button
-            onClick={scrollToTop}
-            className="group flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-amber-400/40 text-xs font-mono text-neutral-300 hover:text-white transition-all"
-            aria-label="Back to top of page"
-          >
-            <span>TOP OF PAGE</span>
-            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-1 transition-transform text-amber-400" />
-          </button>
+          {/* Social Links & Back to top button */}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              <a
+                href="https://www.linkedin.com/in/pramatha-hd/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="flex items-center justify-center w-9 h-9 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-amber-400/40 text-neutral-300 hover:text-amber-300 transition-all"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="https://github.com/Pramatha1209"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="flex items-center justify-center w-9 h-9 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-sky-400/40 text-neutral-300 hover:text-sky-300 transition-all"
+              >
+                <Github className="w-4 h-4" />
+              </a>
+              <a
+                href="mailto:hdpramatha17@gmail.com"
+                aria-label="Email Pramatha"
+                className="flex items-center justify-center w-9 h-9 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-amber-400/40 text-neutral-300 hover:text-amber-300 transition-all"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+            </div>
+
+            <button
+              onClick={scrollToTop}
+              className="group flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-amber-400/40 text-xs font-mono text-neutral-300 hover:text-white transition-all"
+              aria-label="Back to top of page"
+            >
+              <span>TOP OF PAGE</span>
+              <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-1 transition-transform text-amber-400" />
+            </button>
+          </div>
         </div>
 
         {/* Bottom Tier: Copyright & Disclaimers */}

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
   Linkedin,
@@ -12,16 +12,35 @@ import {
   Check,
   ArrowUpRight,
   MessageSquare,
+  AlertCircle,
+  Shield,
+  Loader2,
 } from "lucide-react";
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
-  const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [formStatus, setFormStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
+  const submitLockRef = useRef(false); // prevents duplicate rapid submissions
 
   const emailAddress = "hdpramatha17@gmail.com";
-  const linkedInUrl = "https://linkedin.com/in/pramatha-hd";
+  const linkedInUrl = "https://www.linkedin.com/in/pramatha-hd/";
   const gitHubUrl = "https://github.com/Pramatha1209";
   const locationText = "Bengaluru, Karnataka, India";
 
@@ -31,27 +50,80 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-
-      const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
-        formState.subject || `Inquiry from ${formState.name}`
-      )}&body=${encodeURIComponent(
-        `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
-      )}`;
-      window.location.href = mailtoLink;
-
-      setTimeout(() => setSubmitted(false), 6000);
-    }, 800);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    // Clear error when user starts typing again
+    if (formStatus === "error") {
+      setFormStatus("idle");
+      setErrorMessage("");
+    }
   };
 
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+
+      // Prevent duplicate submissions
+      if (submitLockRef.current || formStatus === "submitting") return;
+      submitLockRef.current = true;
+
+      setFormStatus("submitting");
+      setErrorMessage("");
+
+      try {
+        // Read honeypot from form
+        const honeypotEl = formRef.current?.querySelector(
+          'input[name="_honeypot"]'
+        ) as HTMLInputElement | null;
+
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            subject: formData.subject.trim(),
+            message: formData.message.trim(),
+            _honeypot: honeypotEl?.value || "",
+          }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || "Something went wrong.");
+        }
+
+        setFormStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+
+        // Reset after 8 seconds so user can send another message
+        setTimeout(() => {
+          setFormStatus("idle");
+        }, 8000);
+      } catch (err) {
+        setFormStatus("error");
+        setErrorMessage(
+          err instanceof Error
+            ? err.message
+            : "Failed to send message. Please try again."
+        );
+      } finally {
+        submitLockRef.current = false;
+      }
+    },
+    [formData, formStatus]
+  );
+
+  const isFormDisabled = formStatus === "submitting" || formStatus === "success";
+
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section
+      id="contact"
+      className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative"
+    >
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -68,7 +140,9 @@ export default function Contact() {
           Let&apos;s Build Together
         </h2>
         <p className="text-sm sm:text-base text-[#f5f2eb]/85 mt-2 font-light max-w-xl">
-          Interested in discussing data analytics pipelines, machine learning models, full-stack software development, or engineering roles? Reach out directly.
+          Interested in discussing data analytics pipelines, machine learning
+          models, full-stack software development, or engineering roles? Reach
+          out directly.
         </p>
         <div className="w-20 h-1 bg-amber-400 mt-4 rounded-full" />
       </motion.div>
@@ -134,8 +208,12 @@ export default function Contact() {
                     <Linkedin className="w-4 h-4" />
                   </span>
                   <div>
-                    <div className="text-xs font-mono text-neutral-400 uppercase">LinkedIn</div>
-                    <div className="text-sm font-semibold text-white group-hover:text-amber-300">pramatha-hd</div>
+                    <div className="text-xs font-mono text-neutral-400 uppercase">
+                      LinkedIn
+                    </div>
+                    <div className="text-sm font-semibold text-white group-hover:text-amber-300">
+                      pramatha-hd
+                    </div>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
@@ -153,8 +231,12 @@ export default function Contact() {
                     <Github className="w-4 h-4" />
                   </span>
                   <div>
-                    <div className="text-xs font-mono text-neutral-400 uppercase">GitHub</div>
-                    <div className="text-sm font-semibold text-white group-hover:text-sky-300">Pramatha1209</div>
+                    <div className="text-xs font-mono text-neutral-400 uppercase">
+                      GitHub
+                    </div>
+                    <div className="text-sm font-semibold text-white group-hover:text-sky-300">
+                      Pramatha1209
+                    </div>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
@@ -175,7 +257,7 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* Right Column: Interactive Communication Form */}
+        {/* Right Column: Interactive Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -184,6 +266,7 @@ export default function Contact() {
           className="lg:col-span-7"
         >
           <form
+            ref={formRef}
             onSubmit={handleSubmit}
             className="p-8 sm:p-10 rounded-3xl bg-neutral-900/60 border border-white/10 backdrop-blur-xl shadow-2xl space-y-5"
           >
@@ -192,8 +275,30 @@ export default function Contact() {
                 Send a Message
               </h3>
               <span className="text-xs font-mono text-neutral-400">
-                Direct Dispatch &bull; Quick Turnaround
+                Secure &bull; Server-side Delivery
               </span>
+            </div>
+
+            {/* Honeypot — invisible to humans, traps bots */}
+            <div
+              aria-hidden="true"
+              tabIndex={-1}
+              style={{
+                position: "absolute",
+                left: "-9999px",
+                opacity: 0,
+                height: 0,
+                overflow: "hidden",
+              }}
+            >
+              <label htmlFor="contact-hp">Leave blank</label>
+              <input
+                id="contact-hp"
+                type="text"
+                name="_honeypot"
+                autoComplete="off"
+                tabIndex={-1}
+              />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -202,16 +307,20 @@ export default function Contact() {
                   htmlFor="contact-name"
                   className="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5"
                 >
-                  Your Name *
+                  Full Name *
                 </label>
                 <input
                   id="contact-name"
+                  name="name"
                   type="text"
                   required
+                  minLength={2}
+                  maxLength={100}
+                  disabled={isFormDisabled}
                   placeholder="e.g. Alex Johnson"
-                  value={formState.name}
-                  onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-white/10 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-neutral-500 transition-colors"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-white/10 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-neutral-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
 
@@ -220,16 +329,19 @@ export default function Contact() {
                   htmlFor="contact-email"
                   className="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5"
                 >
-                  Your Email *
+                  Email Address *
                 </label>
                 <input
                   id="contact-email"
+                  name="email"
                   type="email"
                   required
+                  maxLength={254}
+                  disabled={isFormDisabled}
                   placeholder="alex@domain.com"
-                  value={formState.email}
-                  onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-white/10 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-neutral-500 transition-colors"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-white/10 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-neutral-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
             </div>
@@ -239,15 +351,20 @@ export default function Contact() {
                 htmlFor="contact-subject"
                 className="block text-xs font-mono uppercase tracking-wider text-neutral-300 mb-1.5"
               >
-                Subject
+                Subject *
               </label>
               <input
                 id="contact-subject"
+                name="subject"
                 type="text"
+                required
+                minLength={2}
+                maxLength={200}
+                disabled={isFormDisabled}
                 placeholder="e.g. Data Analytics / Software Engineering Collaboration"
-                value={formState.subject}
-                onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-white/10 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-neutral-500 transition-colors"
+                value={formData.subject}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-white/10 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-neutral-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
 
@@ -260,42 +377,89 @@ export default function Contact() {
               </label>
               <textarea
                 id="contact-message"
+                name="message"
                 rows={5}
                 required
+                minLength={10}
+                maxLength={5000}
+                disabled={isFormDisabled}
                 placeholder="Share project specifications, timeline, or inquiries..."
-                value={formState.message}
-                onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-white/10 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-neutral-500 transition-colors resize-none"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-white/10 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-neutral-500 transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
               />
+              <div className="flex justify-end mt-1">
+                <span className="text-[11px] font-mono text-neutral-500">
+                  {formData.message.length} / 5,000
+                </span>
+              </div>
             </div>
 
+            {/* Privacy Notice */}
+            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+              <Shield className="w-4 h-4 text-amber-400/70 shrink-0 mt-0.5" />
+              <p className="text-[11px] leading-relaxed text-neutral-400">
+                Your information will only be used to respond to your enquiry
+                and will not be shared with third parties.
+              </p>
+            </div>
+
+            {/* Submit Button */}
             <div className="pt-2">
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full py-4 rounded-xl bg-white hover:bg-amber-400 text-black font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(245,158,11,0.35)] transition-all disabled:opacity-50"
+                disabled={isFormDisabled}
+                className="w-full py-4 rounded-xl bg-white hover:bg-amber-400 text-black font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(245,158,11,0.35)] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white"
               >
-                {isSubmitting ? (
-                  <span>TRANSMITTING MESSAGE...</span>
+                {formStatus === "submitting" ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>TRANSMITTING MESSAGE...</span>
+                  </>
+                ) : formStatus === "success" ? (
+                  <>
+                    <Check className="w-4 h-4" />
+                    <span>MESSAGE SENT SUCCESSFULLY</span>
+                  </>
                 ) : (
                   <>
-                    <span>TRANSMIT MESSAGE DIRECTLY</span>
+                    <span>TRANSMIT MESSAGE</span>
                     <Send className="w-4 h-4" />
                   </>
                 )}
               </button>
             </div>
 
-            {submitted && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-xs font-mono flex items-center gap-2.5"
-              >
-                <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Message prepared! Opening mail client to dispatch to hdpramatha17@gmail.com.</span>
-              </motion.div>
-            )}
+            {/* Status Messages */}
+            <AnimatePresence mode="wait">
+              {formStatus === "success" && (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-xs font-mono flex items-center gap-2.5"
+                >
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>
+                    Your message has been sent successfully. Thank you for reaching out!
+                  </span>
+                </motion.div>
+              )}
+
+              {formStatus === "error" && (
+                <motion.div
+                  key="error"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="p-4 rounded-xl bg-red-500/10 border border-red-400/30 text-red-300 text-xs font-mono flex items-center gap-2.5"
+                >
+                  <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+                  <span>{errorMessage}</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </form>
         </motion.div>
       </div>
